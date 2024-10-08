@@ -9,6 +9,7 @@ import {
   updateReview,
 } from '@/libs/apis';
 
+/* eslint-disable @typescript-eslint/no-unused-vars */
 export async function GET(req: Request, res: Response) {
   const session = await getServerSession(authOptions);
 
@@ -67,3 +68,4 @@ export async function POST(req: Request, res: Response) {
     return new NextResponse('Unable to create review', { status: 400 });
   }
 }
+/* eslint-enable @typescript-eslint/no-unused-vars */

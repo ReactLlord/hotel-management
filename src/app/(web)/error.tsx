@@ -1,5 +1,6 @@
 'use client';
 
+/* eslint-disable @typescript-eslint/no-unused-vars */
 export default function Error({
   error,
   reset,
@@ -17,3 +18,4 @@ export default function Error({
     </div>
   );
 }
+/* eslint-enable @typescript-eslint/no-unused-vars */

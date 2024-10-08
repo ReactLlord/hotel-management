@@ -22,6 +22,7 @@ interface Metadata {
   totalPrice: string;
 }
 
+/* eslint-disable @typescript-eslint/no-unused-vars */
 export async function POST(req: Request, res: Response) {
   const reqBody = await req.text();
   const sig = req.headers.get('stripe-signature');
@@ -90,3 +91,4 @@ export async function POST(req: Request, res: Response) {
     statusText: 'Event Received',
   });
 }
+/* eslint-enable @typescript-eslint/no-unused-vars */

@@ -1,5 +1,4 @@
 import Stripe from 'stripe';
-
 import { authOptions } from '@/libs/auth';
 import { getServerSession } from 'next-auth';
 import { NextResponse } from 'next/server';
@@ -18,6 +17,7 @@ type RequestData = {
   hotelRoomSlug: string;
 };
 
+/* eslint-disable @typescript-eslint/no-unused-vars */
 export async function POST(req: Request, res: Response) {
   const {
     checkinDate,
@@ -91,7 +91,8 @@ export async function POST(req: Request, res: Response) {
       statusText: 'Payment session created',
     });
   } catch (error: any) {
-    console.log('Payment falied', error);
-    return new NextResponse(error, { status: 500 });
+    console.log('Payment failed', error);
+    return new NextResponse(error.message || 'Internal Server Error', { status: 500 });
   }
 }
+/* eslint-enable @typescript-eslint/no-unused-vars */
